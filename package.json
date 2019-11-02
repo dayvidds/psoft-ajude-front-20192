@@ -1,0 +1,31 @@
+{
+  "name": "psoft-ajude-front-20192",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dayvidds/psoft-ajude-front-20192",
+  "author": "Dayvid Silva <dayvid.silva@ccc.ufcg.edu.br>, Pedro Espindula <joao.espindula@ccc.ufcg.edu.br>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "prettier": "prettier --write \"**/*.{js,html,css}\"",
+    "start": "webpack-dev-server --progress --colors",
+    "build": "webpack"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint && yarn run prettier"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "prettier": "^1.18.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "husky": "^3.0.9"
+  }
+}
