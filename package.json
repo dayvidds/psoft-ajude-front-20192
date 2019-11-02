@@ -23,9 +23,7 @@
     "prettier": "^1.18.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.9.0",
     "husky": "^3.0.9"
   }
 }
