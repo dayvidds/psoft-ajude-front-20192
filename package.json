@@ -8,8 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "prettier": "prettier --write \"**/*.{js,html,css}\"",
-    "start": "webpack-dev-server --progress --colors",
-    "build": "webpack"
+    "start": "cd ./src && python3 -m http.server"
   },
   "husky": {
     "hooks": {
@@ -21,9 +20,6 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "prettier": "^1.18.2",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
     "husky": "^3.0.9"
   }
 }
