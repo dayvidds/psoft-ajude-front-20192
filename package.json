@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "prettier": "prettier --write \"**/*.{js,html,css}\"",
-    "start": "cd ./src && python3 -m http.server"
+    "start": "cd ./src && live-server --port=8000 --cors"
   },
   "husky": {
     "hooks": {
@@ -20,6 +20,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "prettier": "^1.18.2",
-    "husky": "^3.0.9"
+    "husky": "^3.0.9",
+    "live-server": "^1.2.1"
   }
 }
