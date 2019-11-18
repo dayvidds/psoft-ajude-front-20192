@@ -1,9 +1,12 @@
 import Form from '../../components/Form/Form.js';
 import { URL_CADASTRO } from '../../util/routes.js';
 import { redirect } from '../../util/Router.js';
+import { noAuth } from '../../util/auth.js';
 
 export default class Login extends Form {
   constructor() {
+    noAuth();
+
     const title = 'Cadastro';
     const actionName = 'Cadastrar';
     const formFields = [
