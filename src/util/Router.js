@@ -20,7 +20,7 @@ export default class Router {
   }
 
   treatHash(hash) {
-    return hash === '' ? 'root' : hash.substring(1);
+    return hash === '' || hash === '#/' ? 'root' : hash.substring(1);
   }
 
   notFound() {
