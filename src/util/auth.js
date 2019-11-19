@@ -1,4 +1,4 @@
-import { redirect } from './Router.js';
+import { redirect } from '../components/Router/Router.js';
 
 export function isLoggedIn() {
   return localStorage.getItem('token');

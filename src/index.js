@@ -1,7 +1,7 @@
 import Login from './views/login/login.js';
 import Cadastro from './views/cadastro/cadastro.js';
 import Home from './views/home/home.js';
-import Router from './util/Router.js';
+import Router from './components/Router/Router.js';
 
 function routing() {
   const router = new Router({

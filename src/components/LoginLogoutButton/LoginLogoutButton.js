@@ -1,5 +1,5 @@
 import BaseComponent from '../BaseComponent/BaseComponent.js';
-import { redirect } from '../../util/Router.js';
+import { redirect } from '../Router/Router.js';
 import { isLoggedIn, logout } from '../../util/auth.js';
 
 export default class LoginLogoutButton extends BaseComponent {

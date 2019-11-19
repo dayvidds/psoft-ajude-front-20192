@@ -1,6 +1,6 @@
 import Form from '../../components/Form/Form.js';
 import { URL_CADASTRO } from '../../util/routes.js';
-import { redirect } from '../../util/Router.js';
+import { redirect } from '../../components/Router/Router.js';
 import { noAuth } from '../../util/auth.js';
 
 export default class Login extends Form {

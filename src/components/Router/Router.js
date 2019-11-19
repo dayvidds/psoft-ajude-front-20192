@@ -1,3 +1,5 @@
+import { URL_ROOT } from '../../util/app-routes.js';
+
 export function redirect(locationTo) {
   location.hash = locationTo.toLowerCase();
 }
@@ -20,7 +22,10 @@ export default class Router {
   }
 
   treatHash(hash) {
-    return hash === '' || hash === '#/' ? 'root' : hash.substring(1);
+    if (hash === '') {
+      redirect(URL_ROOT);
+    }
+    return hash === '#/' ? 'root' : hash.substring(2);
   }
 
   notFound() {
