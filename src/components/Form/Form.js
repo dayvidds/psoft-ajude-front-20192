@@ -34,7 +34,7 @@ export default class Form extends HTMLElement {
       postRequest(this.url, data)
         .then((r) => r.json())
         .then((response) => {
-          if (response.status === 500) {
+          if (response.status) {
             alert(response.message);
           } else {
             this.handleWorking(response);
