@@ -1,5 +1,5 @@
 import Form from '../../components/Form/Form.js';
-import { API_URL_CADASTRO } from '../../util/api-routes.js';
+import { API_URL_USUARIO } from '../../util/api-routes.js';
 import { URL_LOGIN } from '../../util/app-routes.js';
 import { redirect } from '../../components/Router/Router.js';
 import { noAuth } from '../../util/auth.js';
@@ -22,7 +22,7 @@ export default class Login extends Form {
       redirect(URL_LOGIN);
     };
 
-    super(title, actionName, formFields, handleWorking, API_URL_CADASTRO);
+    super(title, actionName, formFields, handleWorking, API_URL_USUARIO);
   }
 
   render() {
