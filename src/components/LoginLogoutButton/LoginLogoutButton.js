@@ -1,6 +1,7 @@
 import BaseComponent from '../BaseComponent/BaseComponent.js';
 import { redirect } from '../Router/Router.js';
 import { isLoggedIn, logout } from '../../util/auth.js';
+import { URL_LOGIN } from '../../util/app-routes.js';
 
 export default class LoginLogoutButton extends BaseComponent {
   render() {
@@ -17,7 +18,7 @@ export default class LoginLogoutButton extends BaseComponent {
       });
     } else {
       this.querySelector('#login-button').addEventListener('click', () => {
-        redirect('login');
+        redirect(URL_LOGIN);
       });
     }
   }

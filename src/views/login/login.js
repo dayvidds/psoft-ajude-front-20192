@@ -1,6 +1,7 @@
 import Form from '../../components/Form/Form.js';
 import { login, noAuth } from '../../util/auth.js';
-import { URL_LOGIN } from '../../util/routes.js';
+import { API_URL_LOGIN } from '../../util/api-routes.js';
+import { URL_CADASTRO } from '../../util/app-routes.js';
 
 export default class Login extends Form {
   constructor() {
@@ -18,7 +19,7 @@ export default class Login extends Form {
       }
     };
 
-    super(title, actionName, formFields, handleWorking, URL_LOGIN);
+    super(title, actionName, formFields, handleWorking, API_URL_LOGIN);
   }
 
   renderComponent() {

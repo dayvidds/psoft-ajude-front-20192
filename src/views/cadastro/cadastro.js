@@ -1,5 +1,6 @@
 import Form from '../../components/Form/Form.js';
-import { URL_CADASTRO } from '../../util/routes.js';
+import { API_URL_CADASTRO } from '../../util/api-routes.js';
+import { URL_LOGIN } from '../../util/app-routes.js';
 import { redirect } from '../../components/Router/Router.js';
 import { noAuth } from '../../util/auth.js';
 
@@ -18,10 +19,10 @@ export default class Login extends Form {
     ];
     const handleWorking = () => {
       alert('Usuario criado com sucesso!');
-      redirect('login');
+      redirect(URL_LOGIN);
     };
 
-    super(title, actionName, formFields, handleWorking, URL_CADASTRO);
+    super(title, actionName, formFields, handleWorking, API_URL_CADASTRO);
   }
 
   renderComponent() {
