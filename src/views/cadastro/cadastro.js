@@ -25,6 +25,13 @@ export default class Login extends Form {
     super(title, actionName, formFields, handleWorking, API_URL_CADASTRO);
   }
 
+  render() {
+    return `
+      <a href="#${URL_LOGIN}">Login</a>
+      ${super.render()}
+    `;
+  }
+
   renderComponent() {
     return '<cadastro-form></cadastro-form>';
   }
