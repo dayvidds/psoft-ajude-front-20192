@@ -1,0 +1,23 @@
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.fill-content {
+  height: 100%;
+  width: 100%;
+}
