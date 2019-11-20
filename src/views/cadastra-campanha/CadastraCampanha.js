@@ -1,4 +1,5 @@
 import Form from '../../components/Form/Form.js';
+import { API_URL_CAMPANHA } from '../../util/api-routes.js';
 
 export default class CadastraCampanha extends Form {
   constructor() {
@@ -14,7 +15,7 @@ export default class CadastraCampanha extends Form {
       alert('Deu certo');
     };
 
-    super(title, actionName, formFields, handleWorking, '');
+    super(title, actionName, formFields, handleWorking, API_URL_CAMPANHA);
   }
 
   renderComponent() {
