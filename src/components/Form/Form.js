@@ -1,5 +1,5 @@
 import { capitalize, toCammelCase } from '../../util/util.js';
-import { postRequest } from '../../util/mocked-requests.js';
+import { postRequestWithToken } from '../../util/mocked-requests.js';
 
 function formField(name, type) {
   return `
@@ -31,7 +31,7 @@ export default class Form extends HTMLElement {
         data[cammelCaseName] = this.getFieldValue(cammelCaseName, e);
       });
 
-      postRequest(this.url, data)
+      postRequestWithToken(this.url, data)
         .then((r) => r.json())
         .then((response) => {
           if (response.status) {
