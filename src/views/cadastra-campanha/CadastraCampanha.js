@@ -12,7 +12,7 @@ export default class CadastraCampanha extends Form {
       { name: 'Meta', type: 'number' },
     ];
     const handleWorking = () => {
-      alert('Deu certo');
+      alert('Campanha criada com sucesso!');
     };
 
     super(title, actionName, formFields, handleWorking, API_URL_CAMPANHA);
