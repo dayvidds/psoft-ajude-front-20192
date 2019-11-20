@@ -4,7 +4,7 @@ import { URL_LOGIN } from '../../util/app-routes.js';
 import { redirect } from '../../components/Router/Router.js';
 import { noAuth } from '../../util/auth.js';
 
-export default class Login extends Form {
+export default class Cadastro extends Form {
   constructor() {
     noAuth();
 
@@ -37,4 +37,4 @@ export default class Login extends Form {
   }
 }
 
-customElements.define('cadastro-form', Login);
+customElements.define('cadastro-form', Cadastro);
