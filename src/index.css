@@ -1,8 +1,23 @@
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--main-font-color);
+  font-weight: var(--main-light-fw);
+  font-size: 1.6em;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
 html,
 body,
 #app {
   height: 100%;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 #app {
@@ -12,6 +27,10 @@ body,
 }
 
 * {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -22,16 +41,66 @@ body,
   width: 100%;
 }
 
-input[type='date'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+h1 {
+  font-size: 4.6rem;
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: var(--main-light-fw);
+  letter-spacing: -0.1rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+a {
+  color: var(--main-accent-color);
+  text-decoration: none;
   background-color: transparent;
-  border: 0.1rem solid #d1d1d1;
-  border-radius: 0.4rem;
-  box-shadow: none;
-  box-sizing: inherit;
-  height: 3.8rem;
+}
+
+label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: var(--main-featured-fw);
+  margin-bottom: 0.5rem;
+}
+
+input {
+  background-color: transparent;
+  border: var(--main-border);
   padding: 0.6rem 1rem;
   width: 100%;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+button,
+input {
+  height: 3.8rem;
+  border-radius: var(--main-border-radius);
+  margin-bottom: 1.5rem;
+}
+
+button,
+input[type='submit'] {
+  background-color: var(--main-accent-color);
+  border: 0.1rem solid var(--main-accent-color);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: var(--main-featured-fw);
+  letter-spacing: 0.1rem;
+  line-height: 3.8rem;
+  padding: 0 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
