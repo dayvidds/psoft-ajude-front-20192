@@ -1,7 +1,13 @@
 import { redirect } from '../components/Router/Router.js';
 
+const TOKEN_KEY = 'token';
+
+export function getToken() {
+  return localStorage.getItem(TOKEN_KEY);
+}
+
 export function isLoggedIn() {
-  return localStorage.getItem('token');
+  return !!getToken();
 }
 
 export function noAuth() {
@@ -17,11 +23,12 @@ export function forceAuth() {
 }
 
 export function login(token) {
-  localStorage.setItem('token', token);
+  localStorage.setItem(TOKEN_KEY, token);
   redirect('/');
 }
 
 export function logout() {
-  localStorage.removeItem('token');
+  localStorage.removeItem(TOKEN_KEY);
+  redirect('/');
   location.reload();
 }
