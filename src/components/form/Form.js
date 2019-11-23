@@ -1,6 +1,8 @@
 import { capitalize, toCammelCase } from '../../util/util.js';
 import { postRequestWithToken } from '../../util/mocked-requests.js';
 
+const componentName = 'base-form';
+
 function formField(name, type) {
   return `
     <label for="${toCammelCase(name)}">${capitalize(name)}</label>
@@ -59,9 +61,9 @@ export default class Form extends HTMLElement {
       `;
   }
 
-  renderComponent() {
-    return '<base-form></base-form>';
+  static renderComponent() {
+    return `<${componentName}></${componentName}>`;
   }
 }
 
-customElements.define('base-form', Form);
+customElements.define(componentName, Form);

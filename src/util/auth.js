@@ -1,4 +1,4 @@
-import { redirect } from '../components/router/Router.js';
+import { redirect } from './router/Router.js';
 
 const TOKEN_KEY = 'token';
 

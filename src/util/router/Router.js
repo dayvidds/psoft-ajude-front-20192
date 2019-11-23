@@ -1,4 +1,4 @@
-import { URL_ROOT } from '../../util/app-routes.js';
+import { URL_ROOT } from '../app-routes.js';
 
 export function redirect(locationTo) {
   location.hash = locationTo.toLowerCase();

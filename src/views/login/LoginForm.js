@@ -3,6 +3,8 @@ import { login, noAuth } from '../../util/auth.js';
 import { API_URL_LOGIN } from '../../util/api-routes.js';
 import { URL_CADASTRO } from '../../util/app-routes.js';
 
+const componentName = 'login-form';
+
 export default class LoginForm extends Form {
   constructor() {
     noAuth();
@@ -29,9 +31,9 @@ export default class LoginForm extends Form {
     `;
   }
 
-  renderComponent() {
-    return '<login-form></login-form>';
+  static renderComponent() {
+    return `<${componentName}></${componentName}>`;
   }
 }
 
-customElements.define('login-form', LoginForm);
+customElements.define(componentName, LoginForm);

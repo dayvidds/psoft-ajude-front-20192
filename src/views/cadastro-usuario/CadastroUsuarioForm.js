@@ -1,8 +1,10 @@
 import Form from '../../components/form/Form.js';
 import { API_URL_USUARIO } from '../../util/api-routes.js';
 import { URL_LOGIN } from '../../util/app-routes.js';
-import { redirect } from '../../components/router/Router.js';
+import { redirect } from '../../util/router/Router.js';
 import { noAuth } from '../../util/auth.js';
+
+const componentName = 'cadastro-form';
 
 export default class CadastroUsuarioForm extends Form {
   constructor() {
@@ -32,9 +34,9 @@ export default class CadastroUsuarioForm extends Form {
     `;
   }
 
-  renderComponent() {
-    return '<cadastro-form></cadastro-form>';
+  static renderComponent() {
+    return `<${componentName}></${componentName}>`;
   }
 }
 
-customElements.define('cadastro-form', CadastroUsuarioForm);
+customElements.define(componentName, CadastroUsuarioForm);
