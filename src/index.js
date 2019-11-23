@@ -1,15 +1,15 @@
-import LoginForm from './views/login/LoginForm.js';
-import CadastroUsuarioForm from './views/cadastro-usuario/CadastroUsuarioForm.js';
 import Home from './views/home/Home.js';
 import Router from './util/router/Router.js';
-import CadastroCampanhaForm from './views/cadastro-campanha/CadastroCampanhaForm.js';
+import CadastroCampanha from './views/cadastro-campanha/CadastroCampanha.js';
+import CadastroUsuario from './views/cadastro-usuario/CadastroUsuario.js';
+import Login from './views/login/Login.js';
 
 function routing() {
   const router = new Router({
     root: Home,
-    login: LoginForm,
-    cadastro: CadastroUsuarioForm,
-    campanha: CadastroCampanhaForm,
+    login: Login,
+    cadastro: CadastroUsuario,
+    campanha: CadastroCampanha,
   });
 
   router.handleHashChange();

@@ -1,11 +1,10 @@
-import BaseComponent from '../../components/base-component/BaseComponent.js';
-import LoginLogoutButton from '../../components/login-logout-button/LoginLogoutButton.js';
+import BaseView from '../base-view/BaseView.js';
 
 const componentName = 'home-page';
 
-export default class Home extends BaseComponent {
+export default class Home extends BaseView {
   render() {
-    return `${LoginLogoutButton.renderComponent()}`;
+    return '';
   }
 
   static renderComponent() {
