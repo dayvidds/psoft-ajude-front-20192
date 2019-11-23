@@ -1,6 +1,6 @@
-import BaseComponent from '../../components/BaseComponent/BaseComponent.js';
+import BaseComponent from '../../components/base-component/BaseComponent.js';
 // eslint-disable-next-line no-unused-vars
-import LoginLogoutButton from '../../components/LoginLogoutButton/LoginLogoutButton.js';
+import LoginLogoutButton from '../../components/login-logout-button/LoginLogoutButton.js';
 
 export default class Home extends BaseComponent {
   render() {

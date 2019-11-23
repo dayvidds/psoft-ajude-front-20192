@@ -1,5 +1,5 @@
-import BaseComponent from '../BaseComponent/BaseComponent.js';
-import { redirect } from '../Router/Router.js';
+import BaseComponent from '../base-component/BaseComponent.js';
+import { redirect } from '../router/Router.js';
 import { isLoggedIn, logout } from '../../util/auth.js';
 import { URL_LOGIN } from '../../util/app-routes.js';
 

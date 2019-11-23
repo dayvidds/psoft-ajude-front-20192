@@ -1,10 +1,10 @@
-import Form from '../../components/Form/Form.js';
+import Form from '../../components/form/Form.js';
 import { API_URL_USUARIO } from '../../util/api-routes.js';
 import { URL_LOGIN } from '../../util/app-routes.js';
-import { redirect } from '../../components/Router/Router.js';
+import { redirect } from '../../components/router/Router.js';
 import { noAuth } from '../../util/auth.js';
 
-export default class Cadastro extends Form {
+export default class CadastroUsuarioForm extends Form {
   constructor() {
     noAuth();
 
@@ -37,4 +37,4 @@ export default class Cadastro extends Form {
   }
 }
 
-customElements.define('cadastro-form', Cadastro);
+customElements.define('cadastro-form', CadastroUsuarioForm);

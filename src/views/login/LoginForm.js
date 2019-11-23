@@ -1,9 +1,9 @@
-import Form from '../../components/Form/Form.js';
+import Form from '../../components/form/Form.js';
 import { login, noAuth } from '../../util/auth.js';
 import { API_URL_LOGIN } from '../../util/api-routes.js';
 import { URL_CADASTRO } from '../../util/app-routes.js';
 
-export default class Login extends Form {
+export default class LoginForm extends Form {
   constructor() {
     noAuth();
 
@@ -34,4 +34,4 @@ export default class Login extends Form {
   }
 }
 
-customElements.define('login-form', Login);
+customElements.define('login-form', LoginForm);

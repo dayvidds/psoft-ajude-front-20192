@@ -1,9 +1,9 @@
-import Form from '../../components/Form/Form.js';
+import Form from '../../components/form/Form.js';
 import { API_URL_CAMPANHA } from '../../util/api-routes.js';
 
-export default class CadastraCampanha extends Form {
+export default class CadastroCampanhaForm extends Form {
   constructor() {
-    const title = 'Campanha';
+    const title = 'Cadastrar Campanha';
     const actionName = 'Cadastrar Campanha';
     const formFields = [
       { name: 'Nome Curto', type: 'text' },
@@ -23,4 +23,4 @@ export default class CadastraCampanha extends Form {
   }
 }
 
-customElements.define('cadastra-campanha-form', CadastraCampanha);
+customElements.define('cadastra-campanha-form', CadastroCampanhaForm);
