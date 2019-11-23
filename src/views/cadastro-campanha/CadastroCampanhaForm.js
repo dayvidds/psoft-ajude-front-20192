@@ -1,6 +1,8 @@
 import Form from '../../components/form/Form.js';
 import { API_URL_CAMPANHA } from '../../util/api-routes.js';
 
+const componentName = 'cadastra-campanha-form';
+
 export default class CadastroCampanhaForm extends Form {
   constructor() {
     const title = 'Cadastrar Campanha';
@@ -18,9 +20,9 @@ export default class CadastroCampanhaForm extends Form {
     super(title, actionName, formFields, handleWorking, API_URL_CAMPANHA);
   }
 
-  renderComponent() {
-    return '<cadastra-campanha-form></cadastra-campanha-form>';
+  static renderComponent() {
+    return `<${componentName}></${componentName}>`;
   }
 }
 
-customElements.define('cadastra-campanha-form', CadastroCampanhaForm);
+customElements.define(componentName, CadastroCampanhaForm);

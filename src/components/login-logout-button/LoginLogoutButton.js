@@ -1,7 +1,9 @@
 import BaseComponent from '../base-component/BaseComponent.js';
-import { redirect } from '../router/Router.js';
+import { redirect } from '../../util/router/Router.js';
 import { isLoggedIn, logout } from '../../util/auth.js';
 import { URL_LOGIN } from '../../util/app-routes.js';
+
+const componentName = 'login-logout-button';
 
 export default class LoginLogoutButton extends BaseComponent {
   render() {
@@ -22,6 +24,10 @@ export default class LoginLogoutButton extends BaseComponent {
       });
     }
   }
+
+  static renderComponent() {
+    return `<${componentName}></${componentName}>`;
+  }
 }
 
-customElements.define('login-logout-button', LoginLogoutButton);
+customElements.define(componentName, LoginLogoutButton);

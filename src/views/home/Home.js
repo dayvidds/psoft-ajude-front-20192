@@ -1,15 +1,16 @@
 import BaseComponent from '../../components/base-component/BaseComponent.js';
-// eslint-disable-next-line no-unused-vars
 import LoginLogoutButton from '../../components/login-logout-button/LoginLogoutButton.js';
+
+const componentName = 'home-page';
 
 export default class Home extends BaseComponent {
   render() {
-    return '<login-logout-button></login-logout-button>';
+    return `${LoginLogoutButton.renderComponent()}`;
   }
 
-  renderComponent() {
-    return '<home-page></home-page>';
+  static renderComponent() {
+    return `<${componentName}></${componentName}>`;
   }
 }
 
-customElements.define('home-page', Home);
+customElements.define(componentName, Home);
