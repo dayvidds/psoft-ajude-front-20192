@@ -23,9 +23,7 @@ export default class InputPesquisaCampanha extends BaseComponent {
     this.querySelector('#pesquisa-campanha').addEventListener('submit', (e) => {
       e.preventDefault();
       const substring = getFieldValue(idInput, e);
-      const statusProcurados = [...e.target.querySelectorAll('input[type=checkbox]')]
-        .filter((n) => n.checked)
-        .map((n) => n.id);
+      const statusProcurados = [...e.target.querySelectorAll('input[type=checkbox]')].filter((n) => n.checked).map((n) => n.id);
       const query = `?substring=${substring}&status=${statusProcurados}`;
       redirect([URL_PESQUISA_CAMPANHA, query].join(''));
     });
