@@ -25,12 +25,15 @@ export default class Router {
     if (hash === '') {
       redirect(URL_ROOT);
     }
-    return hash === '#/' ? 'root' : hash.substring(2);
+    return hash === '#/' ? 'root' : hash.substring(2, hash.includes('?') ? hash.indexOf('?') : hash.length);
   }
 
   notFound() {
     return {
-      renderComponent: () => '<h1>Not Found</h1>',
+      renderComponent: () => `
+        <h1>Not Found</h1>
+        <a href="${URL_ROOT}">Voltar para HOME</a>
+       `,
     };
   }
 }

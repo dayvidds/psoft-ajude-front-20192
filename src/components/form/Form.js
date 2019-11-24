@@ -1,4 +1,4 @@
-import { capitalize, toCammelCase } from '../../util/util.js';
+import { capitalize, toCammelCase, getFieldValue } from '../../util/util.js';
 import { postRequestWithToken } from '../../util/mocked-requests.js';
 
 const componentName = 'base-form';
@@ -8,6 +8,18 @@ function formField(name, type) {
     <label for="${toCammelCase(name)}">${capitalize(name)}</label>
     <input type="${type.toLowerCase()}" placeholder="${capitalize(name)}" id="${toCammelCase(name)}">
   `;
+}
+
+export function renderForm(title, formFields, actionName) {
+  return `
+        <h1>${title}</h1>     
+        <form id="${title}">
+          <fieldset>
+            ${formFields.map((f) => formField(f.name, f.type)).join('')}
+            <input class="button-primary" type="submit" value="${actionName}">
+          </fieldset>
+        </form>
+      `;
 }
 
 export default class Form extends HTMLElement {
@@ -30,7 +42,7 @@ export default class Form extends HTMLElement {
 
       this.formFields.forEach(({ name }) => {
         const cammelCaseName = toCammelCase(name);
-        data[cammelCaseName] = this.getFieldValue(cammelCaseName, e);
+        data[cammelCaseName] = getFieldValue(cammelCaseName, e);
       });
 
       postRequestWithToken(this.url, data)
@@ -45,20 +57,8 @@ export default class Form extends HTMLElement {
     });
   }
 
-  getFieldValue(id, e) {
-    return e.target.querySelector(`#${id}`).value;
-  }
-
   render() {
-    return `
-        <h1>${this.title}</h1>     
-        <form id="${this.title}">
-          <fieldset>
-            ${this.formFields.map((f) => formField(f.name, f.type)).join('')}
-            <input class="button-primary" type="submit" value="${this.actionName}">
-          </fieldset>
-        </form>
-      `;
+    return renderForm(this.title, this.formFields, this.actionName);
   }
 
   static renderComponent() {
