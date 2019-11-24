@@ -7,7 +7,7 @@ const componentName = 'lista-campanhas';
 
 function renderCampanha(campanha) {
   const urlCampanha = [URL_CAMPANHA, campanha.id].join('/');
-  return `<li><a href="${urlCampanha}">${campanha.nomeCurto}</a></li>`;
+  return `<li><a href="#${urlCampanha}">${campanha.nomeCurto}</a></li>`;
 }
 
 export default class ListaCampanhas extends HTMLElement {
