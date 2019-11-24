@@ -39,11 +39,7 @@ export default class ListaCampanhas extends HTMLElement {
     return `
       <h2>Campanhas encontradas</h2>
       <ul>
-        ${
-  this.campanhas.length === 0
-    ? 'Nenhuma campanha encontrada'
-    : this.campanhas.map(renderCampanha).join('')
-}
+        ${this.campanhas.length === 0 ? 'Nenhuma campanha encontrada' : this.campanhas.map(renderCampanha).join('')}
       </ul>
     `;
   }
