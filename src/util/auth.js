@@ -1,4 +1,5 @@
 import { redirect } from './router/Router.js';
+import { URL_LOGIN, URL_ROOT } from './app-routes.js';
 
 const TOKEN_KEY = 'token';
 
@@ -12,23 +13,23 @@ export function isLoggedIn() {
 
 export function noAuth() {
   if (isLoggedIn()) {
-    redirect('/');
+    redirect(URL_ROOT);
   }
 }
 
 export function forceAuth() {
   if (!isLoggedIn()) {
-    redirect('login');
+    redirect(URL_LOGIN);
   }
 }
 
 export function login(token) {
   localStorage.setItem(TOKEN_KEY, token);
-  redirect('/');
+  redirect(URL_ROOT);
 }
 
 export function logout() {
   localStorage.removeItem(TOKEN_KEY);
-  redirect('/');
+  redirect(URL_ROOT);
   location.reload();
 }
