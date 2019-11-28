@@ -4,6 +4,7 @@ import CadastroCampanha from './views/cadastro-campanha/CadastroCampanha.js';
 import CadastroUsuario from './views/cadastro-usuario/CadastroUsuario.js';
 import Login from './views/login/Login.js';
 import PesquisaCampanha from './views/pesquisa-campanha/PesquisaCampanha.js';
+import Campanha from './views/campanha/Campanha.js';
 
 function routing() {
   const router = new Router(
