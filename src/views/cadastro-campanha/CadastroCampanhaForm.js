@@ -1,5 +1,7 @@
 import Form from '../../components/form/Form.js';
 import { API_URL_CAMPANHA } from '../../util/api-routes.js';
+import { redirect } from '../../util/router/Router.js';
+import { URL_ROOT } from '../../util/app-routes.js';
 
 const componentName = 'cadastra-campanha-form';
 
@@ -15,6 +17,7 @@ export default class CadastroCampanhaForm extends Form {
     ];
     const handleWorking = () => {
       alert('Campanha criada com sucesso!');
+      redirect(URL_ROOT);
     };
 
     super(title, actionName, formFields, handleWorking, API_URL_CAMPANHA);
