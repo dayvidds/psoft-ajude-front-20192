@@ -13,7 +13,7 @@ function formField(name, type) {
 export function renderForm(title, formFields, actionName) {
   return `
         <h1>${title}</h1>     
-        <form id="${title}">
+        <form id="${title.replace(' ', '')}">
           <fieldset>
             ${formFields.map((f) => formField(f.name, f.type)).join('')}
             <input class="button-primary" type="submit" value="${actionName}">
@@ -35,25 +35,33 @@ export default class Form extends HTMLElement {
   }
 
   connectedCallback() {
-    document.querySelector(`#${this.title}`).addEventListener('submit', (e) => {
+    document.querySelector(`#${this.title.replace(' ', '')}`).addEventListener('submit', (e) => {
       e.preventDefault();
 
       const data = {};
 
       this.formFields.forEach(({ name }) => {
         const cammelCaseName = toCammelCase(name);
-        data[cammelCaseName] = getFieldValue(cammelCaseName, e);
+        const fieldValue = getFieldValue(cammelCaseName, e);
+        if (fieldValue === '') {
+          alert(`Preencha o campo "${name}"`);
+          return;
+        }
+
+        data[cammelCaseName] = fieldValue;
       });
 
-      postRequestWithToken(this.url, data)
-        .then((r) => r.json())
-        .then((response) => {
-          if (response.status) {
-            alert(response.message);
-          } else {
-            this.handleWorking(response);
-          }
-        });
+      if (this.formFields.length === Object.values(data).length) {
+        postRequestWithToken(this.url, data)
+          .then((r) => r.json())
+          .then((response) => {
+            if (response.status) {
+              alert(response.message);
+            } else {
+              this.handleWorking(response);
+            }
+          });
+      }
     });
   }
 
