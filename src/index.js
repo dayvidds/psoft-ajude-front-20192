@@ -5,6 +5,7 @@ import CadastroUsuario from './views/cadastro-usuario/CadastroUsuario.js';
 import Login from './views/login/Login.js';
 import PesquisaCampanha from './views/pesquisa-campanha/PesquisaCampanha.js';
 import Campanha from './views/campanha/Campanha.js';
+import Usuario from './views/usuario/Usuario.js';
 
 function routing() {
   const router = new Router(
@@ -14,6 +15,7 @@ function routing() {
       cadastro: CadastroUsuario,
       cadastro_campanha: CadastroCampanha,
       campanha: Campanha,
+      usuario: Usuario,
       'pesquisa/campanha': PesquisaCampanha,
     },
     ['campanha', 'usuario']
