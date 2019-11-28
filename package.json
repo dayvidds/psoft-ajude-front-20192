@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "prettier": "prettier --write \"**/*.{js,html,css}\"",
-    "start": "cd ./src && live-server --port=8000 --cors"
+    "start": "cd ./docs && live-server --port=8000 --cors"
   },
   "husky": {
     "hooks": {
