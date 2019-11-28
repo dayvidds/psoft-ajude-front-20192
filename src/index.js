@@ -6,13 +6,17 @@ import Login from './views/login/Login.js';
 import PesquisaCampanha from './views/pesquisa-campanha/PesquisaCampanha.js';
 
 function routing() {
-  const router = new Router({
-    root: Home,
-    login: Login,
-    cadastro: CadastroUsuario,
-    campanha: CadastroCampanha,
-    'pesquisa/campanha': PesquisaCampanha,
-  });
+  const router = new Router(
+    {
+      root: Home,
+      login: Login,
+      cadastro: CadastroUsuario,
+      cadastro_campanha: CadastroCampanha,
+      campanha: Campanha,
+      'pesquisa/campanha': PesquisaCampanha,
+    },
+    ['campanha', 'usuario']
+  );
 
   router.handleHashChange();
 
