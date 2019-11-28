@@ -7,6 +7,7 @@ const componentName = 'ajude-header';
 export default class AjudeHeader extends BaseComponent {
   render() {
     return `
+      <h1><a href="#/">AJuDE</a></h1>
       ${InputPesquisaCampanha.renderComponent()}
       ${LoginLogoutButton.renderComponent()}
     `;
