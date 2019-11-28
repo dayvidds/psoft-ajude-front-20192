@@ -18,6 +18,9 @@
     "no-restricted-globals": 0,
     "import/extensions": 0,
     "import/prefer-default-export": 0,
+    "indent": 0,
+    "max-len": 0,
+    "comma-dangle": 0,
     "no-alert": 0
   }
 }
