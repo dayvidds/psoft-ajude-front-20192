@@ -1,6 +1,6 @@
-export const API_URI = 'http://localhost:8080';
+export const API_URI = 'https://api-ajude.herokuapp.com';
 
-const API_URL = [API_URI, 'api', 'v1'].join('/');
+const API_URL = [API_URI].join('/');
 
 export const API_URL_USUARIO = [API_URL, 'usuario'].join('/');
 export const API_URL_CAMPANHA = [API_URL, 'campanha'].join('/');
