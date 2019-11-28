@@ -2,6 +2,7 @@ import Form from '../../components/form/Form.js';
 import { login, noAuth } from '../../util/auth.js';
 import { API_URL_LOGIN } from '../../util/api-routes.js';
 import { URL_CADASTRO } from '../../util/app-routes.js';
+import { getFieldValue } from '../../util/util.js';
 
 const componentName = 'login-form';
 
@@ -17,7 +18,7 @@ export default class LoginForm extends Form {
     ];
     const handleWorking = (response) => {
       if (response.token) {
-        login(response.token);
+        login(response.token, getFieldValue('email', { target: this }));
       }
     };
 
