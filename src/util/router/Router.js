@@ -5,8 +5,9 @@ export function redirect(locationTo) {
 }
 
 export default class Router {
-  constructor(routes) {
+  constructor(routes, dinamicRoutes) {
     this.routes = routes;
+    this.dinamicRoutes = dinamicRoutes;
   }
 
   handleHashChange() {
@@ -22,10 +23,16 @@ export default class Router {
   }
 
   treatHash(hash) {
+    const firstRoute = hash.split('/')[1];
+
     if (hash === '') {
       redirect(URL_ROOT);
+    } else if (hash === '#/') {
+      return 'root';
+    } else if (this.dinamicRoutes.includes(firstRoute)) {
+      return firstRoute;
     }
-    return hash === '#/' ? 'root' : hash.substring(2, hash.includes('?') ? hash.indexOf('?') : hash.length);
+    return hash.substring(2, hash.includes('?') ? hash.indexOf('?') : hash.length);
   }
 
   notFound() {
