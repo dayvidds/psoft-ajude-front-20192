@@ -15,12 +15,12 @@ body {
 html,
 body,
 #app {
-  height: 100%;
   width: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
 #app {
+  padding: 1em;
   display: grid;
   align-content: center;
   justify-content: center;
@@ -108,4 +108,48 @@ input[type='submit'] {
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+ajude-header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 2em;
+}
+
+#pesquisa-campanha {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1em;
+  align-items: center;
+}
+
+section {
+  display: grid;
+  grid-gap: 1em;
+}
+
+.card {
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
+  border-radius: 1em;
+}
+
+.inline-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  grid-gap: 1em;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  margin: 1em 0 0;
+}
+
+ul > li {
+  margin: 0 1.5em;
 }
