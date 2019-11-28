@@ -3,9 +3,7 @@ import AjudeHeader from '../../components/ajude-header/AjudeHeader.js';
 const componentName = 'base-view';
 
 export default class BaseView extends HTMLElement {
-  constructor() {
-    super();
-
+  connectedCallback() {
     this.innerHTML = this.renderBase();
   }
 
@@ -16,7 +14,7 @@ export default class BaseView extends HTMLElement {
   renderBase() {
     return `
       ${AjudeHeader.renderComponent()}
-      ${this.render()}
+      <section>${this.render()}</section>
     `;
   }
 
